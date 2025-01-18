@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TankShop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <!-- Link ke file CSS -->
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <header>
+      <nav>
+        <div class="container">
+          <h1>Wahab's Tanks Shop</h1>
+          <ul>
+            <li><a href="{{ url_for('main.home') }}">Home</a></li>
+            <li><a href="#products">Produk</a></li>
+            <li><a href="{{ url_for('main.add_product') }}">Tambah Produk</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h2>Selamat datang di Garasi Kami!</h2>
+        <p>Temukan berbagai produk terbaik dengan harga yang terjangkau!</p>
+      </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="product-section">
+      <div class="container">
+        <h2 class="section-title">Daftar Produk</h2>
+        <div class="product-grid">
+          {% for product in products %}
+          <div class="product-card">
+            <!-- Menampilkan gambar produk -->
+            <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" class="product-image" />
+            <h3>{{ product.name }}</h3>
+            <p class="price">$ {{ product.price }}</p>
+            <p class="stock">Stok: {{ product.stock }}</p>
+            <div class="action">
+              {% if product.stock > 0 %}
+              <form method="post" action="{{ url_for('main.buy', product_id=product.id) }}">
+                <button type="submit" class="btn-buy">Beli</button>
+              </form>
+              {% else %}
+              <span class="out-of-stock">Stok Habis</span>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Rizky Rifaldi Wahab | 20123068</p>
+      </div>
+    </footer>
+  </body>
+</html>

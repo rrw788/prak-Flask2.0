@@ -1,0 +1,210 @@
+/* Reset dasar untuk memastikan konsistensi di seluruh browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2f2f2f; /* Warna latar belakang gelap, menyerupai suasana garasi */
+    color: #f4f4f4; /* Warna teks putih untuk kontras */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header & Navbar */
+  header {
+    background-color: #1b1b1b; /* Dark grey background for a rugged feel */
+    color: #ffcc00; /* Warna emas untuk teks */
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  nav h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 25px;
+  }
+  
+  nav ul li a {
+    color: #ffcc00; /* Warna emas untuk tautan */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    color: #ff6600; /* Efek hover dengan warna oranye */
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1574746794214-58e08c7eb09d'); /* Gambar latar belakang yang menggambarkan tema militer/garasi */
+    background-size: cover;
+    background-position: center;
+    color: #f4f4f4;
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom: 5px solid #ffcc00;
+  }
+  
+  .hero h2 {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .hero p {
+    font-size: 22px;
+    margin-top: 20px;
+    font-style: italic;
+  }
+  
+  /* Product Section */
+  .product-section {
+    padding: 50px 20px;
+    background-color: #3b3b3b; /* Dark grey background for contrast */
+  }
+  
+  .product-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffcc00;
+    font-weight: bold;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .product-card {
+    background-color: #444; /* Darker grey for a tough look */
+    border: 2px solid #ffcc00; /* Border with yellow for highlighting */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+    position: relative;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ffcc00; /* Border yellow to make the image pop */
+  }
+  
+  .product-card h3 {
+    font-size: 22px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ffcc00;
+  }
+  
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745; /* Green color for prices */
+    margin-top: 10px;
+  }
+  
+  .stock {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .action {
+    margin-top: 20px;
+  }
+  
+  .btn-buy {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  
+  .btn-buy:hover {
+    background-color: #0056b3;
+  }
+  
+  .out-of-stock {
+    color: #dc3545; /* Red for out of stock */
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #1b1b1b;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    border-top: 5px solid #ffcc00; /* Border atas footer */
+  }
+  
+  footer p {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  
+  /* Additional Responsive Styles */
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  
+    .hero h2 {
+      font-size: 36px;
+    }
+  
+    .hero p {
+      font-size: 18px;
+    }
+  
+    nav h1 {
+      font-size: 24px;
+    }
+  }
+  
